@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>La Miata</title>
+  <title>La Miata Flash</title>
   <style>
     html, body {
       height: 100%;
@@ -18,10 +18,29 @@
       max-height: 100vh;
       transform: translate(-50%, -50%);
       box-shadow: 0 0 40px 10px #000;
+      opacity: 1;
+      transition: opacity 1s ease;
+    }
+    .fade-out {
+      opacity: 0;
     }
   </style>
 </head>
 <body>
-  <img src="https://i.imgur.com/O2pdK56.jpg" class="centered-img" alt="La Miata">
+  <img src="https://i.imgur.com/O2pdK56.jpg" class="centered-img" alt="La Miata" id="miata">
+
+  <script>
+    // Start 3-second timer as soon as the page loads
+    window.onload = () => {
+      setTimeout(() => {
+        document.getElementById("miata").classList.add("fade-out");
+
+        // Optional: redirect after fade-out
+        // setTimeout(() => {
+        //   window.location.href = "https://example.com";
+        // }, 1000);
+      }, 3000);
+    };
+  </script>
 </body>
 </html>
